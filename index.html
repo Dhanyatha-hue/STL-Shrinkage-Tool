@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* BG grid */
   body::before {
     content: '';
     position: fixed;
@@ -99,7 +98,6 @@
     min-height: calc(100vh - 64px);
   }
 
-  /* ── PANEL ── */
   .panel {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -132,7 +130,6 @@
 
   .panel-body { padding: 1.25rem; flex: 1; overflow-y: auto; }
 
-  /* ── UPLOAD ZONE ── */
   #drop-zone {
     border: 2px dashed var(--border);
     border-radius: 12px;
@@ -152,23 +149,9 @@
 
   #drop-zone.drag-over { transform: scale(1.01); }
 
-  #drop-zone .upload-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
-    display: block;
-  }
-
-  #drop-zone h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.25rem;
-  }
-
-  #drop-zone p {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+  #drop-zone .upload-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+  #drop-zone h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+  #drop-zone p { font-size: 0.78rem; color: var(--muted); }
 
   #file-input { display: none; }
 
@@ -182,16 +165,9 @@
     font-size: 0.82rem;
   }
 
-  .file-info .fname {
-    font-family: var(--mono);
-    color: var(--accent2);
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-
+  .file-info .fname { font-family: var(--mono); color: var(--accent2); font-weight: 700; margin-bottom: 2px; }
   .file-info .fsize { color: var(--muted); }
 
-  /* ── FORM ── */
   .form-section { margin-top: 1.25rem; }
 
   .form-label {
@@ -242,10 +218,9 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     font-size: 0.82rem;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     gap: 0.4rem;
-    display: none;
   }
 
   .mat-prop { display: flex; flex-direction: column; gap: 2px; }
@@ -256,7 +231,6 @@
 
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem; }
 
-  /* ── BUTTON ── */
   .btn {
     display: flex;
     align-items: center;
@@ -281,17 +255,8 @@
     box-shadow: 0 4px 14px rgba(56,189,248,0.35);
   }
 
-  .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(56,189,248,0.45);
-  }
-
-  .btn-primary:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(56,189,248,0.45); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
 
   .btn-success {
     background: linear-gradient(135deg, var(--accent2), #10b981);
@@ -299,10 +264,7 @@
     box-shadow: 0 4px 14px rgba(52,211,153,0.35);
   }
 
-  .btn-success:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(52,211,153,0.45);
-  }
+  .btn-success:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(52,211,153,0.45); }
 
   .btn-outline {
     background: transparent;
@@ -312,20 +274,13 @@
 
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── RIGHT PANEL ── */
-  .right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+  .right-col { display: flex; flex-direction: column; gap: 1.5rem; }
 
-  /* ── 3D VIEWER ── */
   #viewer-panel { flex: 1; min-height: 420px; }
 
   #canvas-container {
     position: relative;
-    background: radial-gradient(ellipse at 30% 30%, rgba(56,189,248,0.07) 0%, transparent 60%),
-                var(--bg);
+    background: radial-gradient(ellipse at 30% 30%, rgba(56,189,248,0.07) 0%, transparent 60%), var(--bg);
     border-radius: 0 0 16px 16px;
     overflow: hidden;
     height: 100%;
@@ -337,11 +292,7 @@
 
   #canvas-container canvas { display: block; }
 
-  .viewer-placeholder {
-    text-align: center;
-    color: var(--muted);
-  }
-
+  .viewer-placeholder { text-align: center; color: var(--muted); }
   .viewer-placeholder .big-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.3; }
   .viewer-placeholder p { font-size: 0.85rem; }
 
@@ -376,14 +327,13 @@
     bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     gap: 4px;
     background: rgba(13,17,23,0.85);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 4px;
     backdrop-filter: blur(8px);
-    display: none;
   }
 
   .toggle-btn {
@@ -398,13 +348,8 @@
     color: var(--muted);
   }
 
-  .toggle-btn.active {
-    background: var(--accent);
-    color: #0d1117;
-    font-weight: 700;
-  }
+  .toggle-btn.active { background: var(--accent); color: #0d1117; font-weight: 700; }
 
-  /* ── STATS ── */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -420,38 +365,16 @@
     text-align: center;
   }
 
-  .stat-card .s-label {
-    font-size: 0.65rem;
-    font-family: var(--mono);
-    color: var(--muted);
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
-
-  .stat-card .s-val {
-    font-size: 1.05rem;
-    font-weight: 700;
-    font-family: var(--mono);
-    color: var(--text);
-  }
-
+  .stat-card .s-label { font-size: 0.65rem; font-family: var(--mono); color: var(--muted); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .stat-card .s-val { font-size: 1.05rem; font-weight: 700; font-family: var(--mono); color: var(--text); }
   .stat-card .s-val.green { color: var(--accent2); }
   .stat-card .s-val.blue { color: var(--accent); }
   .stat-card .s-val.amber { color: var(--accent3); }
   .stat-card .s-sub { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
 
-  /* ── DIM TABLE ── */
-  .dim-table-wrap {
-    padding: 0 1.25rem 1.25rem;
-    display: none;
-  }
+  .dim-table-wrap { padding: 0 1.25rem 1.25rem; display: none; }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 
   th {
     font-family: var(--mono);
@@ -478,36 +401,11 @@
   .td-diff { color: var(--accent3); }
   .td-pct { color: var(--danger); }
 
-  /* ── PROGRESS ── */
-  .progress-bar-wrap {
-    margin: 1rem 0;
-    display: none;
-  }
+  .progress-bar-wrap { margin: 1rem 0; display: none; }
+  .progress-bar-track { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; width: 0%; transition: width 0.3s; box-shadow: 0 0 8px var(--accent); }
+  .progress-label { font-size: 0.72rem; color: var(--muted); font-family: var(--mono); margin-bottom: 0.4rem; }
 
-  .progress-bar-track {
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .progress-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.3s;
-    box-shadow: 0 0 8px var(--accent);
-  }
-
-  .progress-label {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-family: var(--mono);
-    margin-bottom: 0.4rem;
-  }
-
-  /* ── LOG ── */
   .log-box {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -527,13 +425,9 @@
   .log-entry .msg { color: var(--text); }
   .log-entry.err .msg { color: var(--danger); }
   .log-entry.ok .msg { color: var(--accent2); }
+  .log-entry.warn .msg { color: var(--accent3); }
 
-  /* divider */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 1rem 0;
-  }
+  .divider { height: 1px; background: var(--border); margin: 1rem 0; }
 
   .section-title {
     font-size: 0.72rem;
@@ -544,7 +438,6 @@
     margin-bottom: 0.75rem;
   }
 
-  /* tooltip */
   .tip {
     display: inline-block;
     width: 14px; height: 14px;
@@ -559,21 +452,16 @@
     vertical-align: middle;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; height: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-  /* animation */
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .fade-in { animation: fadeIn 0.35s ease forwards; }
 
   .results-panel { display: none; }
 
-  /* Responsive */
-  @media (max-width: 960px) {
-    .container { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 960px) { .container { grid-template-columns: 1fr; } }
 
   .info-strip {
     padding: 0.6rem 1.25rem;
@@ -581,7 +469,6 @@
     border-top: 1px solid var(--border);
     font-size: 0.72rem;
     color: var(--muted);
-    display: flex;
     align-items: center;
     gap: 6px;
     display: none;
@@ -601,6 +488,7 @@
   .chip-blue { background: rgba(56,189,248,0.15); color: var(--accent); }
   .chip-green { background: rgba(52,211,153,0.15); color: var(--accent2); }
   .chip-amber { background: rgba(245,158,11,0.15); color: var(--accent3); }
+  .chip-red { background: rgba(248,113,113,0.15); color: var(--danger); }
 
   #toast {
     position: fixed;
@@ -619,6 +507,19 @@
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     animation: fadeIn 0.3s ease;
   }
+
+  .warn-banner {
+    display: none;
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.35);
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.76rem;
+    color: var(--accent3);
+    margin-top: 0.75rem;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
 </style>
 </head>
 <body>
@@ -629,11 +530,10 @@
     ShrinkCalc
     <span style="color:var(--muted); font-weight:400; font-size:0.7rem;">/ STL Shrinkage Tool</span>
   </div>
-  <span class="badge">v1.0 BETA</span>
+  <span class="badge">v1.1 FIXED</span>
 </header>
 
 <div class="container">
-  <!-- LEFT: Controls -->
   <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
     <!-- Upload -->
@@ -646,12 +546,16 @@
         <div id="drop-zone" onclick="document.getElementById('file-input').click()">
           <span class="upload-icon">📦</span>
           <h3>Drop STL file here</h3>
-          <p>or click to browse — binary & ASCII supported</p>
+          <p>or click to browse — binary &amp; ASCII supported</p>
         </div>
         <input type="file" id="file-input" accept=".stl">
         <div class="file-info" id="file-info">
           <div class="fname" id="file-name">—</div>
           <div class="fsize" id="file-size">—</div>
+        </div>
+        <!-- FIX #3: Warn user when mesh may have bad normals -->
+        <div class="warn-banner" id="normal-warn">
+          ⚠ Normal inconsistency detected in mesh (~<span id="flipped-count">0</span> triangles). Volume may be inaccurate for hollow parts. Ensure your STL has consistent outward-facing normals.
         </div>
       </div>
     </div>
@@ -660,7 +564,7 @@
     <div class="panel">
       <div class="panel-header">
         <span class="dot" style="background:var(--accent2);box-shadow:0 0 6px var(--accent2)"></span>
-        Material & Shrinkage
+        Material &amp; Shrinkage
       </div>
       <div class="panel-body">
         <div class="form-section">
@@ -688,7 +592,7 @@
                 <option value="lead">Lead</option>
                 <option value="tin">Tin</option>
               </optgroup>
-              <optgroup label="Plastics & Polymers">
+              <optgroup label="Plastics &amp; Polymers">
                 <option value="abs">ABS</option>
                 <option value="nylon_pa6">Nylon PA6</option>
                 <option value="nylon_pa66">Nylon PA66</option>
@@ -735,7 +639,8 @@
         <p class="section-title">Optional Overrides</p>
         <div class="row">
           <div>
-            <label class="form-label">Mach. Allowance (mm)</label>
+            <!-- FIX note: machAllow is added per face, so total growth = 2× per axis -->
+            <label class="form-label">Mach. Allow. per face (mm) <span class="tip" title="Applied to each machinable face. Total dimension growth = 2× this value per scaled axis.">?</span></label>
             <input type="number" id="mach-allow" placeholder="0.0" min="0" max="50" step="0.5" value="0">
           </div>
           <div>
@@ -762,7 +667,7 @@
         <div class="log-box" id="log-box"></div>
 
         <button class="btn btn-primary" id="calc-btn" onclick="runCalculation()" disabled>
-          ⚙ Calculate Shrinkage & Process
+          ⚙ Calculate Shrinkage &amp; Process
         </button>
         <button class="btn btn-success" id="dl-btn" onclick="downloadSTL()" disabled style="display:none">
           ⬇ Download Corrected STL
@@ -771,10 +676,9 @@
     </div>
   </div>
 
-  <!-- RIGHT: Viewer + Results -->
+  <!-- RIGHT -->
   <div class="right-col">
 
-    <!-- 3D Viewer -->
     <div class="panel" id="viewer-panel">
       <div class="panel-header">
         <span class="dot" style="background:var(--accent3);box-shadow:0 0 6px var(--accent3)"></span>
@@ -801,7 +705,6 @@
       </div>
     </div>
 
-    <!-- Results -->
     <div class="panel results-panel" id="results-panel">
       <div class="panel-header">
         <span class="dot" style="background:var(--accent2);box-shadow:0 0 6px var(--accent2)"></span>
@@ -809,9 +712,7 @@
         <div style="margin-left:auto;display:flex;gap:6px;" id="result-chips"></div>
       </div>
 
-      <div class="stats-grid" id="stats-grid">
-        <!-- injected -->
-      </div>
+      <div class="stats-grid" id="stats-grid"></div>
 
       <div class="dim-table-wrap" id="dim-table-wrap">
         <p class="section-title">Dimensional Comparison (Bounding Box)</p>
@@ -875,15 +776,18 @@ const MATERIALS = {
 // ══════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════
-let stlData = null;        // raw ArrayBuffer
-let origTriangles = [];    // [{n:[3], v0:[3], v1:[3], v2:[3]}]
+let stlData = null;
+let origTriangles = [];
 let scaledTriangles = [];
 let currentMaterial = null;
 let wireframe = false;
 let showingModel = 'orig';
 
 // WebGL state
-let gl, prog, vbo, vboScaled;
+let gl, prog, canvas, animId;
+let origVBOBuf = null, scaledVBOBuf = null;
+// FIX #1: Separate edge VBOs for wireframe
+let origEdgeBuf = null, scaledEdgeBuf = null;
 let camRot = {x: 0.4, y: 0.6};
 let camDist = 3.5;
 let isDragging = false, lastMX, lastMY;
@@ -926,25 +830,23 @@ function handleFile(f) {
 }
 
 // ══════════════════════════════════════════════
-// STL PARSING (binary + ASCII)
+// STL PARSING
 // ══════════════════════════════════════════════
 function parseSTL(buffer) {
   showProgress('Parsing STL geometry…', 10);
-  const bytes = new Uint8Array(buffer);
-  let triangles;
 
-  // Detect binary vs ASCII
-  const header = String.fromCharCode(...bytes.slice(0, 5));
-  const isBinary = !(header === 'solid');
-
-  // Double check by checking size
+  // FIX #4: Use ONLY the reliable byte-count method for binary detection.
+  // Remove the dead isBinary string check entirely. Many binary STL files
+  // legitimately start with "solid" in their 80-byte header.
   const view = new DataView(buffer);
   let isBin = false;
   if (buffer.byteLength >= 84) {
     const numTris = view.getUint32(80, true);
-    if (80 + 4 + numTris * 50 === buffer.byteLength) isBin = true;
+    // Exact byte-count match: 80 header + 4 count + N×50 triangles
+    if (buffer.byteLength === 80 + 4 + numTris * 50 && numTris > 0) isBin = true;
   }
 
+  let triangles;
   if (isBin) {
     triangles = parseBinarySTL(view);
   } else {
@@ -953,11 +855,39 @@ function parseSTL(buffer) {
 
   origTriangles = triangles;
   log('ok', `Parsed ${triangles.length.toLocaleString()} triangles (${isBin ? 'Binary' : 'ASCII'})`);
+
+  // FIX #3: Normal consistency check — compare stored normals vs computed normals.
+  // If the dot product of stored vs computed is negative, the triangle is flipped.
+  // This catches meshes that will give wrong hollow volume results.
+  validateNormals(triangles);
+
   showProgress('Building 3D model…', 60);
   initWebGL();
   buildVBO(origTriangles, false);
   showProgress('Ready', 100);
   setTimeout(() => hideProgress(), 600);
+}
+
+// FIX #3: Normal validation
+function validateNormals(tris) {
+  let flipped = 0;
+  for (const t of tris) {
+    const computed = computeNormal(t.v0, t.v1, t.v2);
+    const stored = t.n;
+    // dot product < 0 means stored normal points opposite to computed (face-order) normal
+    const dot = stored[0]*computed[0] + stored[1]*computed[1] + stored[2]*computed[2];
+    if (dot < -0.1) flipped++;
+  }
+  const warn = document.getElementById('normal-warn');
+  if (flipped > 0) {
+    const pct = ((flipped / tris.length) * 100).toFixed(1);
+    document.getElementById('flipped-count').textContent = `${flipped.toLocaleString()} (${pct}%)`;
+    warn.style.display = 'block';
+    log('warn', `Normal check: ${flipped} flipped triangles (${pct}%). Hollow volume may be inaccurate.`);
+  } else {
+    warn.style.display = 'none';
+    log('ok', 'Normal check passed — mesh normals consistent.');
+  }
 }
 
 function parseBinarySTL(view) {
@@ -971,7 +901,7 @@ function parseBinarySTL(view) {
     const v0 = [view.getFloat32(off,true), view.getFloat32(off+4,true), view.getFloat32(off+8,true)]; off+=12;
     const v1 = [view.getFloat32(off,true), view.getFloat32(off+4,true), view.getFloat32(off+8,true)]; off+=12;
     const v2 = [view.getFloat32(off,true), view.getFloat32(off+4,true), view.getFloat32(off+8,true)]; off+=12;
-    off += 2; // attr
+    off += 2;
     tris.push({n:[nx,ny,nz], v0, v1, v2});
   }
   return tris;
@@ -1061,34 +991,36 @@ function runCalculation() {
   const axis = document.getElementById('scale-axis').value;
 
   showProgress('Calculating scaling factor…', 20);
-  log('', `Shrinkage rate: ${shrinkRate} mm/100mm → Factor: ${(1 + shrinkRate/100).toFixed(6)}`);
 
-  // scaling factor: pattern must be BIGGER than part by shrinkage amount
+  // Shrinkage allowance: pattern must be LARGER than final part by the shrinkage rate.
+  // Formula: sf = 1 + (shrinkRate / 100)
+  // where shrinkRate is in mm per 100mm (= percentage).
+  // e.g. gray iron at 1.0 mm/100mm → sf = 1.010 → 100mm part needs 101mm pattern.
   const sf = 1 + (shrinkRate / 100);
+  log('', `Shrinkage: ${shrinkRate} mm/100mm → Pattern scale factor: ${sf.toFixed(6)}`);
+  if (machAllow > 0) {
+    log('', `Machining allowance: ${machAllow}mm per face → +${(machAllow*2).toFixed(2)}mm total per scaled axis`);
+  }
 
-  // compute bounding box of original
   const bbox = computeBBox(origTriangles);
 
   showProgress('Scaling geometry…', 45);
-
-  // Apply scaling (and optional machining allowance)
   scaledTriangles = scaleTriangles(origTriangles, sf, axis, bbox.center, machAllow);
 
   const bboxScaled = computeBBox(scaledTriangles);
 
   showProgress('Computing volumes…', 70);
-
   const volOrig   = computeVolume(origTriangles);
   const volScaled = computeVolume(scaledTriangles);
   const volDiff   = volScaled - volOrig;
-  const volPct    = ((volDiff / volOrig) * 100).toFixed(3);
+  // FIX #5: Use computed sign, don't hardcode "+"
+  const volPct    = ((volDiff / volOrig) * 100);
 
   showProgress('Building results…', 85);
 
   buildVBO(scaledTriangles, true);
 
-  // Show results
-  renderStats(sf, shrinkRate, machAllow, volOrig, volScaled, volDiff, volPct);
+  renderStats(sf, shrinkRate, machAllow, axis, volOrig, volScaled, volDiff, volPct);
   renderDimTable(bbox, bboxScaled, axis);
 
   document.getElementById('results-panel').style.display = 'flex';
@@ -1098,27 +1030,32 @@ function runCalculation() {
   document.getElementById('dl-btn').disabled = false;
   document.getElementById('info-strip').style.display = 'flex';
   document.getElementById('info-text').textContent =
-    `Scale factor: ${sf.toFixed(6)} | Shrinkage: ${shrinkRate} mm/100mm | Machining add: ${machAllow}mm`;
+    `Scale factor: ${sf.toFixed(6)} | Shrinkage: ${shrinkRate} mm/100mm | Machining allowance: ${machAllow}mm/face | Axis: ${axis}`;
 
   showModel('orig');
   showProgress('Done', 100);
   setTimeout(hideProgress, 600);
-  log('ok', `Done! Volume: ${volOrig.toFixed(2)} mm³ → ${volScaled.toFixed(2)} mm³ (+${volPct}%)`);
+  log('ok', `Done! Volume: ${fmtVol(volOrig)} mm³ → ${fmtVol(volScaled)} mm³ (${volPct>=0?'+':''}${volPct.toFixed(3)}%)`);
   showToast('✅ Calculation complete!');
 }
 
+// ══════════════════════════════════════════════
+// SCALING
+// ══════════════════════════════════════════════
 function scaleTriangles(tris, sf, axis, center, machAllow) {
-  return tris.map(t => {
-    const applyV = v => scaleVert(v, sf, axis, center, machAllow);
-    return {
-      n: t.n,
-      v0: applyV(t.v0),
-      v1: applyV(t.v1),
-      v2: applyV(t.v2),
-    };
-  });
+  return tris.map(t => ({
+    n: t.n,
+    v0: scaleVert(t.v0, sf, axis, center, machAllow),
+    v1: scaleVert(t.v1, sf, axis, center, machAllow),
+    v2: scaleVert(t.v2, sf, axis, center, machAllow),
+  }));
 }
 
+// FIX #2: Correct machining allowance axis masking.
+// The old code used negative-matching (suppress if wrong axis), which broke
+// for 'xy' because 'xy' !== 'x' and 'xy' !== 'y' — mask evaluated to 1 (mach ON)
+// for the Z axis even in XY-only mode.
+// Fix: use positive-matching (apply only if this axis IS scaled).
 function scaleVert(v, sf, axis, center, machAllow) {
   let sx = 1, sy = 1, sz = 1;
   if (axis === 'uniform') { sx = sy = sz = sf; }
@@ -1127,13 +1064,27 @@ function scaleVert(v, sf, axis, center, machAllow) {
   else if (axis === 'x')   { sx = sf; }
   else if (axis === 'y')   { sy = sf; }
 
+  // Machining allowance: apply to each face outward from center,
+  // but only along axes that are actually being scaled.
+  // Each face gets +machAllow → total per-axis growth = 2 × machAllow.
+  const applyMachX = (axis === 'uniform' || axis === 'xy' || axis === 'x');
+  const applyMachY = (axis === 'uniform' || axis === 'xy' || axis === 'y');
+  const applyMachZ = (axis === 'uniform' || axis === 'z');
+
+  const mx = applyMachX ? (v[0] >= center[0] ? machAllow : -machAllow) : 0;
+  const my = applyMachY ? (v[1] >= center[1] ? machAllow : -machAllow) : 0;
+  const mz = applyMachZ ? (v[2] >= center[2] ? machAllow : -machAllow) : 0;
+
   return [
-    (v[0] - center[0]) * sx + center[0] + (v[0] >= center[0] ? machAllow : -machAllow) * (axis === 'y' || axis === 'z' ? 0 : 1),
-    (v[1] - center[1]) * sy + center[1] + (v[1] >= center[1] ? machAllow : -machAllow) * (axis === 'x' || axis === 'z' ? 0 : 1),
-    (v[2] - center[2]) * sz + center[2] + (v[2] >= center[2] ? machAllow : -machAllow) * (axis === 'x' || axis === 'y' ? 0 : 1),
+    (v[0] - center[0]) * sx + center[0] + mx,
+    (v[1] - center[1]) * sy + center[1] + my,
+    (v[2] - center[2]) * sz + center[2] + mz,
   ];
 }
 
+// ══════════════════════════════════════════════
+// GEOMETRY HELPERS
+// ══════════════════════════════════════════════
 function computeBBox(tris) {
   let minX=Infinity,minY=Infinity,minZ=Infinity;
   let maxX=-Infinity,maxY=-Infinity,maxZ=-Infinity;
@@ -1151,8 +1102,13 @@ function computeBBox(tris) {
   };
 }
 
+// Volume via signed tetrahedra (divergence theorem).
+// This correctly handles hollow parts provided the mesh is a valid closed
+// manifold with consistent outward-facing normals. The inner shell's
+// inward-facing normals produce negative signed contributions that
+// subtract from the outer shell volume, giving the true shell volume.
+// The normal validation above warns if the mesh may not meet this requirement.
 function computeVolume(tris) {
-  // Signed volume of tetrahedra (divergence theorem)
   let vol = 0;
   for (const t of tris) {
     const [x1,y1,z1] = t.v0;
@@ -1166,21 +1122,26 @@ function computeVolume(tris) {
 // ══════════════════════════════════════════════
 // UI RESULTS
 // ══════════════════════════════════════════════
-function renderStats(sf, shrink, mach, vo, vs, vd, vpct) {
-  const mat = currentMaterial;
+function renderStats(sf, shrink, mach, axis, vo, vs, vd, vpct) {
+  const selEl = document.getElementById('material-select');
+  const matLabel = selEl.options[selEl.selectedIndex].text;
   const chips = document.getElementById('result-chips');
+
+  // FIX #5: display correct sign on volume change
+  const sign = vpct >= 0 ? '+' : '';
+
   chips.innerHTML = `
-    <span class="chip chip-blue">${document.getElementById('material-select').options[document.getElementById('material-select').selectedIndex].text}</span>
+    <span class="chip chip-blue">${matLabel}</span>
     <span class="chip chip-green">×${sf.toFixed(5)}</span>
-    ${mach>0 ? `<span class="chip chip-amber">+${mach}mm mach</span>` : ''}
+    ${mach>0 ? `<span class="chip chip-amber">+${mach}mm/face mach</span>` : ''}
+    ${axis!=='uniform' ? `<span class="chip chip-red">axis:${axis}</span>` : ''}
   `;
 
-  const sg = document.getElementById('stats-grid');
-  sg.innerHTML = `
+  document.getElementById('stats-grid').innerHTML = `
     <div class="stat-card">
       <div class="s-label">Scale Factor</div>
       <div class="s-val blue">${sf.toFixed(6)}</div>
-      <div class="s-sub">× uniform</div>
+      <div class="s-sub">${axis} scale</div>
     </div>
     <div class="stat-card">
       <div class="s-label">Shrinkage Rate</div>
@@ -1204,41 +1165,44 @@ function renderStats(sf, shrink, mach, vo, vs, vd, vpct) {
     </div>
     <div class="stat-card">
       <div class="s-label">Volume Change</div>
-      <div class="s-val amber">+${vpct}%</div>
-      <div class="s-sub">${fmtVol(vd)} mm³ added</div>
+      <div class="s-val amber">${sign}${vpct.toFixed(3)}%</div>
+      <div class="s-sub">${sign}${fmtVol(Math.abs(vd))} mm³</div>
     </div>
   `;
 }
 
 function renderDimTable(orig, scaled, axis) {
-  const wrap = document.getElementById('dim-table-wrap');
-  wrap.style.display = 'block';
+  document.getElementById('dim-table-wrap').style.display = 'block';
   const tb = document.getElementById('dim-tbody');
   tb.innerHTML = '';
   const axes = ['X','Y','Z'];
   for (let i = 0; i < 3; i++) {
     const o = orig.size[i], s = scaled.size[i];
-    const d = s - o, p = ((d/o)*100).toFixed(3);
+    const d = s - o;
+    // FIX #5: compute sign properly
+    const pct = o > 0 ? ((d/o)*100) : 0;
+    const sign = pct >= 0 ? '+' : '';
     const row = document.createElement('tr');
     row.innerHTML = `
       <td class="td-axis">${axes[i]}</td>
       <td class="td-orig">${o.toFixed(4)}</td>
       <td class="td-new">${s.toFixed(4)}</td>
-      <td class="td-diff">+${d.toFixed(4)}</td>
-      <td class="td-pct">+${p}%</td>
+      <td class="td-diff">${sign}${d.toFixed(4)}</td>
+      <td class="td-pct">${sign}${pct.toFixed(3)}%</td>
     `;
     tb.appendChild(row);
   }
-  // Volume row
-  const row = document.createElement('tr');
   const vo = computeVolume(origTriangles), vs = computeVolume(scaledTriangles);
-  const dp = (((vs-vo)/vo)*100).toFixed(3);
+  const vd = vs - vo;
+  const dp = vo > 0 ? ((vd/vo)*100) : 0;
+  const vsign = dp >= 0 ? '+' : '';
+  const row = document.createElement('tr');
   row.innerHTML = `
     <td class="td-axis" style="color:var(--accent3)">Vol</td>
     <td class="td-orig">${fmtVol(vo)} mm³</td>
     <td class="td-new" style="color:var(--accent2)">${fmtVol(vs)} mm³</td>
-    <td class="td-diff">+${fmtVol(vs-vo)} mm³</td>
-    <td class="td-pct">+${dp}%</td>
+    <td class="td-diff">${vsign}${fmtVol(Math.abs(vd))} mm³</td>
+    <td class="td-pct">${vsign}${dp.toFixed(3)}%</td>
   `;
   tb.appendChild(row);
 }
@@ -1252,9 +1216,8 @@ function downloadSTL() {
   const buf = new ArrayBuffer(bufSize);
   const view = new DataView(buf);
 
-  // 80 byte header
   const enc = new TextEncoder();
-  const hdr = enc.encode('ShrinkCalc Corrected STL - shrinkage applied');
+  const hdr = enc.encode('ShrinkCalc v1.1 Corrected STL - shrinkage applied');
   for (let i = 0; i < Math.min(80, hdr.length); i++) view.setUint8(i, hdr[i]);
 
   view.setUint32(80, tris.length, true);
@@ -1290,9 +1253,6 @@ function computeNormal(v0, v1, v2) {
 // ══════════════════════════════════════════════
 // WebGL RENDERER
 // ══════════════════════════════════════════════
-let canvas, animId;
-let origVBOBuf = null, scaledVBOBuf = null;
-
 function initWebGL() {
   canvas = document.getElementById('gl-canvas');
   const container = document.getElementById('canvas-container');
@@ -1309,7 +1269,6 @@ function initWebGL() {
   gl.enable(gl.DEPTH_TEST);
   gl.enable(gl.CULL_FACE);
 
-  // Shaders
   const vs = `
     attribute vec3 aPos;
     attribute vec3 aNorm;
@@ -1330,14 +1289,13 @@ function initWebGL() {
     uniform vec3 uColor;
     uniform int uWire;
     void main() {
-      if (uWire == 1) { gl_FragColor = vec4(0.22, 0.48, 0.6, 1.0); return; }
+      if (uWire == 1) { gl_FragColor = vec4(0.22, 0.73, 0.92, 1.0); return; }
       vec3 light1 = normalize(vec3(1.0, 2.0, 2.0));
       vec3 light2 = normalize(vec3(-1.0, -1.0, 1.0));
       float d1 = max(dot(vNorm, light1), 0.0);
       float d2 = max(dot(vNorm, light2), 0.0) * 0.3;
       float ambient = 0.2;
       vec3 col = uColor * (ambient + d1 * 0.7 + d2);
-      // Rim
       vec3 viewDir = normalize(vec3(0.0, 0.0, 3.0) - vPos);
       float rim = 1.0 - max(dot(viewDir, vNorm), 0.0);
       rim = pow(rim, 3.0) * 0.25;
@@ -1349,7 +1307,6 @@ function initWebGL() {
   prog = createShaderProg(vs, fs);
   gl.useProgram(prog);
 
-  // Mouse
   canvas.addEventListener('mousedown', e => { isDragging=true; lastMX=e.clientX; lastMY=e.clientY; });
   canvas.addEventListener('mousemove', e => {
     if (!isDragging) return;
@@ -1361,7 +1318,6 @@ function initWebGL() {
   canvas.addEventListener('mouseleave', () => isDragging=false);
   canvas.addEventListener('wheel', e => { camDist *= (1 + e.deltaY * 0.001); camDist = Math.max(0.5, Math.min(20, camDist)); });
 
-  // Touch
   let lastTouch = null;
   canvas.addEventListener('touchstart', e => { lastTouch = e.touches[0]; });
   canvas.addEventListener('touchmove', e => {
@@ -1380,25 +1336,47 @@ function initWebGL() {
 
 function buildVBO(tris, isScaled) {
   if (!gl) return;
-  const arr = [];
+
+  // Build face VBO (triangles with per-vertex normals for shading)
+  const faceArr = [];
   for (const t of tris) {
     const n = computeNormal(t.v0, t.v1, t.v2);
     for (const v of [t.v0, t.v1, t.v2]) {
-      arr.push(...v, ...n);
+      faceArr.push(...v, ...n);
     }
   }
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(arr), gl.STATIC_DRAW);
+  const faceBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, faceBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(faceArr), gl.STATIC_DRAW);
+  faceBuf.count = tris.length * 3;
 
-  if (!isScaled) { origVBOBuf = buf; origVBOBuf.count = tris.length * 3; }
-  else { scaledVBOBuf = buf; scaledVBOBuf.count = tris.length * 3; }
+  // FIX #1: Build edge VBO for correct wireframe rendering.
+  // Each triangle contributes 3 edges: V0→V1, V1→V2, V2→V0.
+  // Draw with gl.LINES (each pair of vertices = one line segment).
+  const edgeArr = [];
+  const zeroN = [0, 0, 1]; // dummy normal for wireframe (not used in rendering)
+  for (const t of tris) {
+    edgeArr.push(...t.v0, ...zeroN, ...t.v1, ...zeroN);
+    edgeArr.push(...t.v1, ...zeroN, ...t.v2, ...zeroN);
+    edgeArr.push(...t.v2, ...zeroN, ...t.v0, ...zeroN);
+  }
+  const edgeBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, edgeBuf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(edgeArr), gl.STATIC_DRAW);
+  edgeBuf.count = tris.length * 6; // 3 edges × 2 vertices each
 
-  // Compute model normalization on first load
-  const bbox = computeBBox(tris);
-  modelCenter = bbox.center;
-  const ms = Math.max(...bbox.size);
-  modelScale = ms > 0 ? 2 / ms : 1;
+  if (!isScaled) {
+    origVBOBuf = faceBuf;
+    origEdgeBuf = edgeBuf;
+    // Compute model normalization from first mesh load
+    const bbox = computeBBox(tris);
+    modelCenter = bbox.center;
+    const ms = Math.max(...bbox.size);
+    modelScale = ms > 0 ? 2 / ms : 1;
+  } else {
+    scaledVBOBuf = faceBuf;
+    scaledEdgeBuf = edgeBuf;
+  }
 }
 
 function renderLoop() {
@@ -1407,8 +1385,10 @@ function renderLoop() {
   gl.viewport(0, 0, canvas.width, canvas.height);
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-  const activeBuf = showingModel === 'orig' ? origVBOBuf : (scaledVBOBuf || origVBOBuf);
-  if (!activeBuf) return;
+  const activeFaceBuf = showingModel === 'orig' ? origVBOBuf : (scaledVBOBuf || origVBOBuf);
+  // FIX #1: Use the correct edge buffer for wireframe
+  const activeEdgeBuf = showingModel === 'orig' ? origEdgeBuf : (scaledEdgeBuf || origEdgeBuf);
+  if (!activeFaceBuf) return;
 
   const W = canvas.width, H = canvas.height;
   const aspect = W/H;
@@ -1424,25 +1404,34 @@ function renderLoop() {
   const colLoc = gl.getUniformLocation(prog, 'uColor');
   const wireLoc = gl.getUniformLocation(prog, 'uWire');
 
-  gl.bindBuffer(gl.ARRAY_BUFFER, activeBuf);
-  const stride = 24;
-  gl.enableVertexAttribArray(posLoc);
-  gl.vertexAttribPointer(posLoc, 3, gl.FLOAT, false, stride, 0);
-  gl.enableVertexAttribArray(nrmLoc);
-  gl.vertexAttribPointer(nrmLoc, 3, gl.FLOAT, false, stride, 12);
-
   gl.uniformMatrix4fv(mvpLoc, false, mvp);
   gl.uniformMatrix4fv(mdlLoc, false, model);
 
+  const stride = 24;
+
   if (wireframe) {
+    // FIX #1: Draw the edge buffer with gl.LINES for correct wireframe
+    if (!activeEdgeBuf) return;
+    gl.bindBuffer(gl.ARRAY_BUFFER, activeEdgeBuf);
+    gl.enableVertexAttribArray(posLoc);
+    gl.vertexAttribPointer(posLoc, 3, gl.FLOAT, false, stride, 0);
+    gl.enableVertexAttribArray(nrmLoc);
+    gl.vertexAttribPointer(nrmLoc, 3, gl.FLOAT, false, stride, 12);
     gl.uniform1i(wireLoc, 1);
     gl.uniform3f(colLoc, 0.22, 0.73, 0.92);
-    gl.drawArrays(gl.LINES, 0, activeBuf.count);
+    gl.disable(gl.CULL_FACE);
+    gl.drawArrays(gl.LINES, 0, activeEdgeBuf.count);
+    gl.enable(gl.CULL_FACE);
   } else {
+    gl.bindBuffer(gl.ARRAY_BUFFER, activeFaceBuf);
+    gl.enableVertexAttribArray(posLoc);
+    gl.vertexAttribPointer(posLoc, 3, gl.FLOAT, false, stride, 0);
+    gl.enableVertexAttribArray(nrmLoc);
+    gl.vertexAttribPointer(nrmLoc, 3, gl.FLOAT, false, stride, 12);
     gl.uniform1i(wireLoc, 0);
     const col = showingModel === 'scaled' ? [0.21, 0.83, 0.6] : [0.22, 0.55, 0.85];
     gl.uniform3f(colLoc, ...col);
-    gl.drawArrays(gl.TRIANGLES, 0, activeBuf.count);
+    gl.drawArrays(gl.TRIANGLES, 0, activeFaceBuf.count);
   }
 }
 
@@ -1495,17 +1484,9 @@ function mat4Mul(a, b) {
   return r;
 }
 
-function rotX(a) {
-  const c=Math.cos(a),s=Math.sin(a);
-  return new Float32Array([1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]);
-}
-function rotY(a) {
-  const c=Math.cos(a),s=Math.sin(a);
-  return new Float32Array([c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]);
-}
-function mat4Scale(s) {
-  return new Float32Array([s,0,0,0, 0,s,0,0, 0,0,s,0, 0,0,0,1]);
-}
+function rotX(a) { const c=Math.cos(a),s=Math.sin(a); return new Float32Array([1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]); }
+function rotY(a) { const c=Math.cos(a),s=Math.sin(a); return new Float32Array([c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]); }
+function mat4Scale(s) { return new Float32Array([s,0,0,0, 0,s,0,0, 0,0,s,0, 0,0,0,1]); }
 
 function norm(v) { const l=Math.sqrt(v[0]**2+v[1]**2+v[2]**2)||1; return [v[0]/l,v[1]/l,v[2]/l]; }
 function sub3(a,b) { return [a[0]-b[0],a[1]-b[1],a[2]-b[2]]; }
@@ -1543,22 +1524,19 @@ function fmtVol(v) {
 }
 
 function showProgress(label, pct) {
-  const w = document.getElementById('prog-wrap');
-  w.style.display = 'block';
+  document.getElementById('prog-wrap').style.display = 'block';
   document.getElementById('prog-label').textContent = label;
   document.getElementById('prog-fill').style.width = pct+'%';
   document.getElementById('log-box').style.display = 'block';
 }
 
-function hideProgress() {
-  document.getElementById('prog-wrap').style.display = 'none';
-}
+function hideProgress() { document.getElementById('prog-wrap').style.display = 'none'; }
 
 function log(type, msg) {
   const box = document.getElementById('log-box');
   box.style.display = 'block';
   const d = document.createElement('div');
-  d.className = 'log-entry' + (type==='err'?' err':type==='ok'?' ok':'');
+  d.className = 'log-entry' + (type==='err' ? ' err' : type==='ok' ? ' ok' : type==='warn' ? ' warn' : '');
   const now = new Date();
   const ts = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}:${now.getSeconds().toString().padStart(2,'0')}`;
   d.innerHTML = `<span class="ts">${ts}</span><span class="msg">${msg}</span>`;
@@ -1574,7 +1552,6 @@ function showToast(msg, type) {
   setTimeout(() => t.style.display='none', 3000);
 }
 
-// Resize canvas on window resize
 window.addEventListener('resize', () => {
   if (canvas && gl) {
     const c = document.getElementById('canvas-container');
